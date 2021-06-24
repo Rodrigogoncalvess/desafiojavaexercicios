@@ -1,5 +1,7 @@
 package br.com.jorgerabellodev.reskilling.parte01;
 
+import javax.swing.*;
+
 /**
  * Faça um programa que calcule e mostre a tabuada de um número digitado pelo usuário.
  * Exemplo:
@@ -17,4 +19,15 @@ package br.com.jorgerabellodev.reskilling.parte01;
  * 5 × 10 = 50
  */
 public class Exercicio13 {
+    public static void main(String[] args) {
+
+
+        int numero = Integer.parseInt(JOptionPane.showInputDialog("Digite um número para obter a tabuada de multiplicação:"));
+        System.out.println("Tabuada de multiplicação");
+        for (int i = 0; i <= 10; i++) {
+            int multi = numero * i;
+            System.out.println(+numero + " x " + i + " = " + multi);
+        }
+    }
 }
+
