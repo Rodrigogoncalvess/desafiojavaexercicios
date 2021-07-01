@@ -9,4 +9,20 @@ package br.com.jorgerabellodev.reskilling.parte03;
  * máximo esperado, o preço do ingresso e a quantidade de ingressos vendidos para a obtenção desse lucro.
  */
 public class Exercicio02 {
+    public static void main(String[] args) {
+
+        var valorIngreso = 5.0;
+        var valorDespesa = 200.0;
+        var qtdIngresso = 120;
+        var aumentoQtdIngresso = 26;
+        var descontoValorIngresso = 0.5;
+        var valorAtual = valorIngreso;
+
+        while (valorAtual >= 1 && valorAtual <= 5) {
+            System.out.println("\nLucro esperado a cada R$ 0,50 de desconto: " + ((valorAtual * qtdIngresso) - valorDespesa));
+            valorAtual -= descontoValorIngresso;
+            System.out.println("Quantidade de infgresso vendido: "+( qtdIngresso += aumentoQtdIngresso));
+
+        }
+    }
 }
