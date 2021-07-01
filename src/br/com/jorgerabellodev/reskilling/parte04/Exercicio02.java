@@ -7,4 +7,7 @@ package br.com.jorgerabellodev.reskilling.parte04;
  * ■ ■ os números múltiplos de 2 e de 3
  */
 public class Exercicio02 {
+    public static void main(String[] args) {
+
+    }
 }

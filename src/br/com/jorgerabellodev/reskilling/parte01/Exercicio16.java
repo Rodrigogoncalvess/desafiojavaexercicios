@@ -13,7 +13,7 @@ public class Exercicio16 {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Informe o valor do cateto oposto");
-        catetoOposto=scanner.
+
 
 
 
