@@ -15,8 +15,8 @@ public class Exercicio10 {
 
     public static void main(String[] args) {
 
-        var primeiroConjuntoNumero = new int[6];
-        var segundoConjuntoNumero = new int[3];
+        var primeiroConjuntoNumero = new int[10];
+        var segundoConjuntoNumero = new int[5];
         var totalNumeroPar = 0;
         var totalNumeroImparPrimeiroVetor = 0;
         var totalNumeroImparSegundoVetor = 0;
