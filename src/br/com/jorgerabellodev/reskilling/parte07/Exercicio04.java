@@ -8,4 +8,13 @@ package br.com.jorgerabellodev.reskilling.parte07;
  * c) Eliminação de espaços duplicados entre palavras.
  */
 public class Exercicio04 {
+    public static void main(String[] args) {
+
+        String frase = " Mengão vai     ganhar hoje! ";
+
+        frase=frase.replaceAll("\s+", " ").trim();
+
+
+        System.out.println(frase);
+    }
 }
