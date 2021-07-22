@@ -8,4 +8,14 @@ package br.com.jorgerabellodev.reskilling.parte07;
  * Saída: A#O##E A# UO##E UE
  */
 public class Exercicio01 {
+    public static void main(String[] args) {
+
+        String palavra = "EU ESTOU NA ESCOLA";
+
+        palavra = new StringBuilder(palavra).reverse().toString();
+
+        palavra = palavra.replaceAll("[^aeiouAEIOU ]", "#");
+
+        System.out.println(palavra);
+    }
 }
