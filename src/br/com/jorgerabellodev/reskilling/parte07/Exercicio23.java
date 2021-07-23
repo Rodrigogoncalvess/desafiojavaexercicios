@@ -1,5 +1,8 @@
 package br.com.jorgerabellodev.reskilling.parte07;
 
+import java.text.Collator;
+import java.util.Scanner;
+
 /**
  * A busca por subcadeias dentro de grandes cadeias de caracteres é um problema clássico na computação,
  * especificamente em bancos de dados. Faça um programa que receba uma cadeia de caracteres e uma
@@ -23,4 +26,45 @@ package br.com.jorgerabellodev.reskilling.parte07;
  * Saída: a subcadeia não está contida na cadeia.
  */
 public class Exercicio23 {
+    public static void main(String[] args) {
+
+        String cadeia;
+        String subCadeia;
+        int contador = 0;
+
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite a cadeia de caracteres:");
+        cadeia= scanner.next();
+
+        System.out.println("Digite a subcadeia de caracteres:");
+        subCadeia= scanner.next();
+
+        int qtd = cadeia.indexOf(subCadeia);
+
+        if (cadeia.equals("")) {
+            System.out.println("A subcadeia não está contida na cadeia");
+
+        } else if (cadeia.length() < subCadeia.length()) {
+            System.out.println("Erro! Tamanho incorreto. Digite outra subcadeia.");
+
+        } else {
+            while (qtd >= 0) {
+                qtd = qtd + 1;
+                contador = contador + 1;
+                qtd = cadeia.indexOf(subCadeia, qtd);
+            }
+            System.out.println("Subcadeia aparece " + contador + " vez(es) na cadeia");
+        }
+    }
 }
+
+
+
+
+
+
+
+
+

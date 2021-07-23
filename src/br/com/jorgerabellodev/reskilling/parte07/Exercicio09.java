@@ -1,8 +1,36 @@
 package br.com.jorgerabellodev.reskilling.parte07;
 
+import java.util.Scanner;
+
 /**
  * Faça um programa que receba uma frase e um caractere e verifique em que posição da frase o caractere digi-
  * tado aparece pela primeira vez.
  */
 public class Exercicio09 {
+    public static void main(String[] args) {
+
+
+        String frase;
+        int contador = 0;
+        int caracter;
+
+        Scanner scan = new Scanner(System.in);
+
+
+        System.out.println("Digite a frase:");
+        frase = scan.nextLine();
+        System.out.println("Digite o caracter:");
+        caracter = scan.next().charAt(0);
+
+        frase = frase.toLowerCase();
+
+        for (int i = 0; i < frase.length(); i++) {
+            if (caracter == frase.charAt(i)) {
+                System.out.println("O primeiro caracter encontrado na frase está na posição [" + i + "] e foi a letra: " + frase.charAt(i));
+                break;
+            }
+        }
+
+    }
 }
+

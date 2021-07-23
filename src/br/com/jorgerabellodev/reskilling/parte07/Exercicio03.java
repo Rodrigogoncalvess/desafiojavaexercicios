@@ -5,4 +5,13 @@ package br.com.jorgerabellodev.reskilling.parte07;
  * da frase e entre suas palavras.
  */
 public class Exercicio03 {
+    public static void main(String[] args) {
+
+        String frase = "Mengão vai                       ganhar hoje!";
+
+        frase=frase.replaceAll("\s+"," ");
+
+        System.out.println(frase);
+
+    }
 }
