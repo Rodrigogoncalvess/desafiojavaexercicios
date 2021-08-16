@@ -5,4 +5,10 @@ package br.com.jorgerabellodev.reskilling.parte09;
  * existir dois produtos com o mesmo código.
  */
 public class Exercicio16 {
+    public static void main(String[] args) {
+
+        ArquivoProdutos arquivoProdutos = new ArquivoProdutos();
+
+        arquivoProdutos.cadastrarProdutos();
+    }
 }
