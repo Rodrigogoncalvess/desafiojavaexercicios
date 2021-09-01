@@ -1,5 +1,6 @@
 package br.com.jorgerabellodev.reskilling.parte10.exercicio01;
 
+
 /**
  * Defina uma classe CARRO com os seguintes atributos: placa e ano de fabricação. Essa classe deve ter também
  * um método para calcular o imposto.
@@ -49,4 +50,15 @@ package br.com.jorgerabellodev.reskilling.parte10.exercicio01;
  * c) a quantidade de carros que não pagam impostos (outro método).
  */
 public class Exercicio01 {
+
+
+    public static void main(String[] args) {
+
+        Carro carro = new Carro();
+
+        carro.cadastrarCarro();
+        carro.calcularImposto();
+        carro.totalDeImpostoPago();
+        carro.totalDeCarroIsento();
+    }
 }
