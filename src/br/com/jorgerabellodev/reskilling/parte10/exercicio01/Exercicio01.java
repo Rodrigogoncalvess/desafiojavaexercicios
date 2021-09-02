@@ -1,6 +1,10 @@
 package br.com.jorgerabellodev.reskilling.parte10.exercicio01;
 
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  * Defina uma classe CARRO com os seguintes atributos: placa e ano de fabricação. Essa classe deve ter também
  * um método para calcular o imposto.
@@ -54,11 +58,56 @@ public class Exercicio01 {
 
     public static void main(String[] args) {
 
-        Carro carro = new Carro();
+        Scanner ler = new Scanner(System.in);
+        int count = 0;
 
-        carro.cadastrarCarro();
-        carro.calcularImposto();
-        carro.totalDeImpostoPago();
-        carro.totalDeCarroIsento();
+        List<Carro> listaCarros = new ArrayList<>();
+
+        do {
+            System.out.println("Informe a placa do carro que deseja cadastrar:");
+            String placa = ler.next().toUpperCase().concat(ler.nextLine());
+
+            try {
+
+                validarPlaca(placa);
+
+                System.out.println("Informe o ano de fabricação do carro que deseja cadastrar:");
+                int anoFabricacao = ler.nextInt();
+
+                Carro carro = new Carro(placa, anoFabricacao);
+
+                if (carro.validarAno()) {
+                    listaCarros.add(carro);
+                    count++;
+                }
+
+            } catch (RuntimeException e) {
+                System.err.println(e.getMessage());
+            }
+
+        } while (count < 4);
+
+        for (Carro carro : listaCarros) {
+            carro.calcularImposto(listaCarros);
+            break;
+        }
+        for (Carro carro : listaCarros) {
+            carro.totalDeImpostoPago(listaCarros);
+            break;
+        }
+        for (Carro carro : listaCarros) {
+            carro.totalDeCarroIsento(listaCarros);
+            break;
+        }
+
     }
+
+    private static void validarPlaca(String placa) {
+
+        if (placa.length() > 0 && placa.length() <= 7 && !placa.matches("[A-Z]{3}('-')[0-9]{4}")) {
+            throw new PlacaInvalidaException("Placa inválida!\nPlaca precisa ser digitada neste formato (AAA-1234)");
+        }
+
+    }
+
 }
