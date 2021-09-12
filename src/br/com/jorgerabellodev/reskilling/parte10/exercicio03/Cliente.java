@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Cliente {
 
+    public static final double DESCONTO_CINCO_PORCENTO = 0.05;
     private int numeroCliente;
     private String nomeCliente;
     private String sexoCliente;
@@ -39,8 +40,14 @@ public class Cliente {
 
     public double calcularDescontoAdicional(int numeroCliente, int quantidade,int numeroProduto) {
 
-        final double descontoCincoPorcento = 0.05;
 
+        Double valorTotalProduto = calcularDescontoAdicionalAMais(numeroCliente, quantidade, numeroProduto);
+        if (valorTotalProduto != null) return valorTotalProduto;
+        return 0;
+    }
+
+
+    private Double calcularDescontoAdicionalAMais(int numeroCliente, int quantidade, int numeroProduto) {
         for (int i = 0; i < clienteList.size(); i++) {
             String letra = clienteList.get(i).getSexoCliente();
             if (letra.equalsIgnoreCase("f")) {
@@ -49,13 +56,13 @@ public class Cliente {
                     for (int j = 0;j < produto.produtoList.size();j++) {
                         if (produto.produtoList.get(j).getNumeroProduto() == numeroProduto) {
                             double valorTotalProduto = produto.produtoList.get(j).getPrecoProduto() * quantidade;
-                            return valorTotalProduto * descontoCincoPorcento;
+                            return valorTotalProduto * DESCONTO_CINCO_PORCENTO;
                         }
                     }
                 }
             }
         }
-        return 0;
+        return null;
     }
 
     public boolean validarNumeroCliente(int numeroCliente, List<Cliente> clienteList) {
